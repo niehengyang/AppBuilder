@@ -1,0 +1,39 @@
+UserApi:
+  Name: app-builder
+  Host: 0.0.0.0
+  Port: 8881
+  Timeout: 300000
+Log:
+  Level: "debug"
+  Path: "/go/src/app/logs"
+  KeepDays: 7
+JwtAuth:
+  AccessSecret: "navibusiness"
+  AccessExpire: 10800
+Mysql:
+  DataSource: root:boom123456@tcp(mysql:3306)/navi?utf8mb4&parseTime=true
+  MaxIdleConns: 1   # 最大空闲连接数, <=MaxOpenConns
+  MaxOpenConns: 10  # 最大连接数
+RabbitMQ:
+  Host: rabbitmq
+  Port: 5672
+  User: admin
+  Password: boom123456
+CacheRedis:
+  Host: redis
+  Port: 6379
+  Password: ""
+MaxBytes: 1048576000
+FileServer:
+  PrefixPath: http://192.168.3.50:8803
+  RelativePath: /go/src/F_S/
+  AudioSamplePath: /go/src/F_S/AudioSamples/  #声音采样资源
+  VenueFileSavePath: /go/src/F_S/Venues/      #场馆采样资源
+  AudioFileSavePath: /go/src/F_S/Audios/
+  ImageFileSavePath: /go/src/F_S/Images/
+  PptFileSavePath: /go/src/F_S/Ppts/            # 宣讲解析PPT资源
+  NaviResourcePath: /go/src/F_S/Navi/           # 数字人核心功能资源路径
+  PresentationVideo: /go/src/F_S/Pvs/           # 构建生成的宣讲视频
+System:
+  AdminDefaultPwd: "#eb823258"
+  UserDefaultPwd: "#eb823258"
